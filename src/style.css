@@ -40,7 +40,7 @@
 	margin: 45px;
 	margin-top: 50px;
 	text-align: center;
-	background-image: url(./img/marca.png);
+	/* background-image: url(./img/marca.png); */
 }
 
 .header {
@@ -51,7 +51,7 @@
 	color: black;
 }
 
-.text {
+#searchInput {
 	padding: 8px;
 	margin: 22px;
 	width: 34%;
@@ -91,4 +91,17 @@
 
 .returnBtn {
 	display: none;
+	margin: auto;
+	font-size: 20px;
+	font-family: Arial;
+	color: white;
+	width: 99px;
+	background-color: blue;
+	border-radius: 9px;
+	height: 34px;
+	font-weight: bold;
+}
+
+#searchResult {
+	margin-top: 37px;
 }

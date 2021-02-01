@@ -19,13 +19,14 @@ function pageSearch() {
 
   const templateSearch = `
     <div class="header">
-        <img src="./img/book.png" alt="">
+        <img src="./img/logo-small.png" alt="">
         <button id="returnBtn" class="returnBtn">Voltar</button>
         <button class="backBtn">Sair</button>
     </div>
     <input type="text" id="searchInput" placeholder="Busque por Autor, Editora ou Título">
     <button id="searchBook">Buscar</button>
     <div id="searchResult">
+    <img src="./img/marca.png">
     </div>
     <div id="individualBook">
     </div>
