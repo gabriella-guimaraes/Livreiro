@@ -94,7 +94,7 @@ function pageSearch() {
                   // // console.log(nome)
                   searchResult.style.display = "none"
 
-                  const individualBook = document.querySelector("#individualBook");
+                  // const individualBook = document.querySelector("#individualBook");
                   
                   mostrarLIvroIndividual(loja1, loja2, loja3, nome, estoque1, estoque2, estoque3, individualBook)
 
@@ -184,5 +184,6 @@ function mostrarLIvroIndividual (imageBoock,name,author,publisher,bookRating,des
 
  </div> 
   `
+  alert('cagou aqui')
   individualBook.innerHTML = templateLivroUNico
 }
