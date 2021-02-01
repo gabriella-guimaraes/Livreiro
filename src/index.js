@@ -69,10 +69,18 @@ function pageSearch() {
             .then((response) => response.json())
             .then((json) => {
               console.log(json)
-
+              const imageBoock = (item.volumeInfo.imageLinks) ? item.volumeInfo.imageLinks.thumbnail : placeHldr
+              const name = json.volumeInfo.title;
+              const author = item.volumeInfo.authors;
+              const publisher = item.volumeInfo.publisher;
+              const bookRating = item.volumeInfo.categories
+              const description = item.volumeInfo.description
+              //const isbn = 
               fetch("https://6015b2e155dfbd00174ca812.mockapi.io/api/v1/Livrarias", infos)
                 .then((response) => response.json())
                 .then((json) => {
+                  const individualBook = document.querySelector("#individualBook")
+                  mostrarLIvroIndividual(imageBoock,name,author,publisher,bookRating,description,individualBook)
                   console.log(json)
                 })
                 .catch((erro) => console.log("Erro:" + erro));
@@ -108,4 +116,23 @@ function formatOutput(title, author, publisher, bookImg, selfLink) {
     </div>
   </div>`
   return bookCard;
+}
+function mostrarLIvroIndividual (imageBoock,name,author,publisher,bookRating,description, individualBook){
+  const templateLivroUNico = `
+  <h1>${name}</h1>
+  <div> 
+  <img src="${imageBoock}" alt="${name}">
+  <div>
+    <p>${author}</p>
+    <p>${publisher}</p>
+    <p>${bookRating}</p>
+  </div>
+  </div>
+  <div>
+    <p>${description}</p>
+  </div> 
+
+  `
+
+  individualBook.innerHTML = templateLivroUNico
 }
