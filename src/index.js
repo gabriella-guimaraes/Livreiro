@@ -69,9 +69,9 @@ function pageSearch() {
           fetch(eachBook.id, infos)
             .then((response) => response.json())
             .then((json) => {
-              moreInfo();
               console.log(json)
               const nome = json.volumeInfo.title;
+              // const quantidade = json.volumeInfo.title;
 
               fetch("https://6015b2e155dfbd00174ca812.mockapi.io/api/v1/Livrarias", infos)
                 .then((response) => response.json())
@@ -80,12 +80,16 @@ function pageSearch() {
                   
                   const loja1 = json[0].nome;
                   const loja2 = json[1].nome;
-                  // console.log(nome)
+                  const loja3 = json[2].nome;
+                  const estoque1 = json [0].quantidade;
+                  const estoque2 = json [1].quantidade;
+                  const estoque3 = json [2].quantidade;
+                  // // console.log(nome)
                   searchResult.style.display = "none"
 
                   const individualBook = document.querySelector("#individualBook");
                   
-                  mostrarLIvroIndividual(loja1, loja2, nome, individualBook)
+                  mostrarLIvroIndividual(loja1, loja2, loja3, nome, estoque1, estoque2, estoque3, individualBook)
 
                   const returnBtn = document.querySelector("#returnBtn");
                   returnBtn.style.display = "block";
@@ -145,13 +149,23 @@ function formatOutput(title, author, publisher, bookImg, selfLink) {
   return bookCard;
 }
 
-function mostrarLIvroIndividual (loja1, loja2, nome, individualBook){
+function mostrarLIvroIndividual (loja1, loja2, loja3, nome, estoque1, estoque2, estoque3, individualBook){
   const templateLivroUNico = `
   <div>
     <h1>${nome}</h1>
+    <h2>Livro disponível nas unidades:</h2>
     <p>${loja1}</p>
     <p>${loja2}</p>
+    <p>${loja3}</p>
   </div>
+  <div>
+   <h1>Quantidade em estoque</h1>
+   <p>${loja1}: ${estoque1} livros</p>
+   <p>${loja2}: ${estoque2} livros</p>
+   <p>${loja3}: ${estoque3} livros</p>
+
+  </div> 
+
   `
 
   individualBook.innerHTML = templateLivroUNico
