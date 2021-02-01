@@ -84,9 +84,24 @@ function pageSearch() {
                   const individualBook = document.querySelector("#individualBook")
                   mostrarLIvroIndividual(imageBoock,name,author,publisher,bookRating,description,individualBook)
                   console.log(json)
+                  
+                  const loja1 = json[0].nome;
+                  const loja2 = json[1].nome;
+                  const loja3 = json[2].nome;
+                  const estoque1 = json [0].quantidade;
+                  const estoque2 = json [1].quantidade;
+                  const estoque3 = json [2].quantidade;
+                  // // console.log(nome)
                   searchResult.style.display = "none"
+
+                  const individualBook = document.querySelector("#individualBook");
+                  
+                  mostrarLIvroIndividual(loja1, loja2, loja3, nome, estoque1, estoque2, estoque3, individualBook)
+
                   const returnBtn = document.querySelector("#returnBtn");
                   returnBtn.style.display = "block";
+                  const bookStore = document.querySelector(".bookStore");
+                  // bookStoreResults(json);
                 })
                 .catch((erro) => console.log("Erro:" + erro));
             })
@@ -110,6 +125,24 @@ function displayResults(response) {
   }
 };
 
+// function bookStoreResults(response){
+//   data.forEach((json) => {
+//     const nome = json.nome
+//     const storeTemplate = `
+//         <div class="bookStore">
+//             <h2>${nome}</h2>
+//         </div>
+//         `
+//         ;
+//   })
+  // for (let i = 0; i < response.name.length; i++){
+  //   const stores = 
+  // }
+//  alert('hello there')
+//   const datas = response.nome
+//   console.log(datas); 
+//}
+
 function formatOutput(title, author, publisher, bookImg, selfLink) {
   var bookCard = `
   <div class="eachBook" id="${selfLink}">
@@ -123,7 +156,7 @@ function formatOutput(title, author, publisher, bookImg, selfLink) {
   return bookCard;
 }
 
-function mostrarLIvroIndividual (imageBoock,name,author,publisher,bookRating,description,individualBook){
+function mostrarLIvroIndividual (imageBoock,name,author,publisher,bookRating,description, loja1, loja2, loja3, estoque1, estoque2, estoque3,individualBook){
   const templateLivroUNico = `
   <h1>${name}</h1>
   <div> 
@@ -137,6 +170,19 @@ function mostrarLIvroIndividual (imageBoock,name,author,publisher,bookRating,des
   <div>
     <p>${description}</p>
   </div> 
+  <h1>${name}</h1>
+  <h2>Livro disponível nas unidades:</h2>
+  <p>${loja1}</p>
+  <p>${loja2}</p>
+  <p>${loja3}</p>
+ </div>
+ <div>
+ <h1>Quantidade em estoque</h1>
+ <p>${loja1}: ${estoque1} livros</p>
+ <p>${loja2}: ${estoque2} livros</p>
+ <p>${loja3}: ${estoque3} livros</p>
+
+ </div> 
   `
   individualBook.innerHTML = templateLivroUNico
 }
