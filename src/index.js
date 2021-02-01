@@ -19,14 +19,11 @@ function pageSearch() {
 
   const templateSearch = `
     <div class="header">
-
-        <img src="./img/logo-small.png" alt="">
+        <img src="./img/book.png" alt="">
+        <button id="returnBtn" class="returnBtn">Voltar</button>
         <button class="backBtn">Sair</button>
     </div>
-    <input class="text" type="text" placeholder="Busque por Autor, Editora ou Título">
-
-        <button id="returnBtn" >Voltar</button>
-   
+    <input type="text" id="searchInput" placeholder="Busque por Autor, Editora ou Título">
     <button id="searchBook">Buscar</button>
     <div id="searchResult">
     </div>
@@ -77,6 +74,8 @@ function pageSearch() {
                 .then((response) => response.json())
                 .then((json) => {
                   console.log(json)
+                  const returnBtn = document.querySelector("#returnBtn");
+                  returnBtn.style.display = "block";
                 })
                 .catch((erro) => console.log("Erro:" + erro));
             })
