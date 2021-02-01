@@ -70,11 +70,22 @@ function pageSearch() {
             .then((response) => response.json())
             .then((json) => {
               console.log(json)
+              const nome = json.volumeInfo.title;
 
               fetch("https://6015b2e155dfbd00174ca812.mockapi.io/api/v1/Livrarias", infos)
                 .then((response) => response.json())
                 .then((json) => {
                   console.log(json)
+                  
+                  const loja1 = json[0].nome;
+                  const loja2 = json[1].nome;
+                  // console.log(nome)
+                  searchResult.style.display = "none"
+
+                  const individualBook = document.querySelector("#individualBook");
+                  
+                  mostrarLIvroIndividual(loja1, loja2, nome, individualBook)
+
                   const returnBtn = document.querySelector("#returnBtn");
                   returnBtn.style.display = "block";
                 })
@@ -111,4 +122,16 @@ function formatOutput(title, author, publisher, bookImg, selfLink) {
     </div>
   </div>`
   return bookCard;
+}
+
+function mostrarLIvroIndividual (loja1, loja2, nome, individualBook){
+  const templateLivroUNico = `
+  <div>
+    <h1>${nome}</h1>
+    <p>${loja1}</p>
+    <p>${loja2}</p>
+  </div>
+  `
+
+  individualBook.innerHTML = templateLivroUNico
 }
