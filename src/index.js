@@ -70,12 +70,19 @@ function pageSearch() {
             .then((response) => response.json())
             .then((json) => {
               console.log(json)
-              const nome = json.volumeInfo.title;
-              // const quantidade = json.volumeInfo.title;
+              const imageBoock = (item.volumeInfo.imageLinks) ? item.volumeInfo.imageLinks.thumbnail : placeHldr
+              const name = json.volumeInfo.title;
+              const author = item.volumeInfo.authors;
+              const publisher = item.volumeInfo.publisher;
+              const bookRating = item.volumeInfo.categories
+              const description = item.volumeInfo.description
+              //const isbn = 
 
               fetch("https://6015b2e155dfbd00174ca812.mockapi.io/api/v1/Livrarias", infos)
                 .then((response) => response.json())
                 .then((json) => {
+                  const individualBook = document.querySelector("#individualBook")
+                  mostrarLIvroIndividual(imageBoock,name,author,publisher,bookRating,description,individualBook)
                   console.log(json)
                   
                   const loja1 = json[0].nome;
@@ -149,24 +156,33 @@ function formatOutput(title, author, publisher, bookImg, selfLink) {
   return bookCard;
 }
 
-function mostrarLIvroIndividual (loja1, loja2, loja3, nome, estoque1, estoque2, estoque3, individualBook){
+function mostrarLIvroIndividual (imageBoock,name,author,publisher,bookRating,description, loja1, loja2, loja3, estoque1, estoque2, estoque3,individualBook){
   const templateLivroUNico = `
+  <h1>${name}</h1>
+  <div> 
+  <img src="${imageBoock}" alt="${name}">
   <div>
-    <h1>${nome}</h1>
-    <h2>Livro disponível nas unidades:</h2>
-    <p>${loja1}</p>
-    <p>${loja2}</p>
-    <p>${loja3}</p>
+    <p>${author}</p>
+    <p>${publisher}</p>
+    <p>${bookRating}</p>
+  </div>
   </div>
   <div>
-   <h1>Quantidade em estoque</h1>
-   <p>${loja1}: ${estoque1} livros</p>
-   <p>${loja2}: ${estoque2} livros</p>
-   <p>${loja3}: ${estoque3} livros</p>
-
+    <p>${description}</p>
   </div> 
+  <h1>${name}</h1>
+  <h2>Livro disponível nas unidades:</h2>
+  <p>${loja1}</p>
+  <p>${loja2}</p>
+  <p>${loja3}</p>
+ </div>
+ <div>
+ <h1>Quantidade em estoque</h1>
+ <p>${loja1}: ${estoque1} livros</p>
+ <p>${loja2}: ${estoque2} livros</p>
+ <p>${loja3}: ${estoque3} livros</p>
 
+ </div> 
   `
-
   individualBook.innerHTML = templateLivroUNico
 }
