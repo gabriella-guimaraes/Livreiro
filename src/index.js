@@ -82,7 +82,7 @@ function pageSearch() {
                 .then((response) => response.json())
                 .then((json) => {
                   const individualBook = document.querySelector("#individualBook")
-                  mostrarLIvroIndividual(imageBoock,name,author,publisher,bookRating,description,individualBook)
+                  mostrarLIvroIndividual(imageBoock,name,author,publisher,bookRating,description,loja1, loja2, loja3, nome, estoque1, estoque2, estoque3,individualBook)
                   console.log(json)
                   
                   const loja1 = json[0].nome;
@@ -91,12 +91,8 @@ function pageSearch() {
                   const estoque1 = json [0].quantidade;
                   const estoque2 = json [1].quantidade;
                   const estoque3 = json [2].quantidade;
-                  // // console.log(nome)
-                  searchResult.style.display = "none"
-
-                  const individualBook = document.querySelector("#individualBook");
                   
-                  mostrarLIvroIndividual(loja1, loja2, loja3, nome, estoque1, estoque2, estoque3, individualBook)
+                  searchResult.style.display = "none"
 
                   const returnBtn = document.querySelector("#returnBtn");
                   returnBtn.style.display = "block";
