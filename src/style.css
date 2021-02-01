@@ -6,6 +6,7 @@
 
 .home {
 	text-align: center;
+	margin-top: 50px;
 }
 
 .home__subtitle {
@@ -16,7 +17,6 @@
 	font-weight: bold;
 }
 .initBtn:hover {
-	opacity: 0, 6;
 	cursor: pointer;
 	background-color: blueviolet;
 }
@@ -27,11 +27,81 @@
 	margin: auto;
 	justify-content: center;
 	padding: 38px;
-	font-family: sans-serif;
+	font-family: Arial;
 	font-weight: bold;
 	color: white;
 	font-size: 20px;
 	border-radius: 50px;
-	background-color: rgb(0, 238, 255);
-	margin-top: 91px;
+	background-color: rgb(12, 24, 196);
+	margin-top: 50px;
+}
+
+.search {
+	margin: 45px;
+	margin-top: 50px;
+	text-align: center;
+	/* background-image: url(./img/marca.png); */
+}
+
+.header {
+	display: flex;
+	margin: auto;
+	justify-content: space-between;
+	font-family: Arial;
+	color: black;
+}
+
+#searchInput {
+	padding: 8px;
+	margin: 22px;
+	width: 34%;
+}
+.backBtn {
+	font-family: Arial;
+	color: white;
+	font-size: 18px;
+	font-weight: bold;
+	width: 55px;
+	background-color: red;
+	border-radius: 10px;
+	height: 29px;
+}
+
+.backBtn:hover {
+	cursor: pointer;
+	background-color: blueviolet;
+}
+
+#searchBook {
+	margin: auto;
+	font-size: 20px;
+	font-family: Arial;
+	color: white;
+	width: 99px;
+	background-color: blue;
+	border-radius: 9px;
+	height: 34px;
+	font-weight: bold;
+}
+
+#searchBook:hover {
+	cursor: pointer;
+	background-color: blueviolet;
+}
+
+.returnBtn {
+	display: none;
+	margin: auto;
+	font-size: 20px;
+	font-family: Arial;
+	color: white;
+	width: 99px;
+	background-color: blue;
+	border-radius: 9px;
+	height: 34px;
+	font-weight: bold;
+}
+
+#searchResult {
+	margin-top: 37px;
 }

@@ -19,13 +19,14 @@ function pageSearch() {
 
   const templateSearch = `
     <div class="header">
-        <img src="./img/book.png" alt="">
-        <button id="returnBtn" >Voltar</button>
+        <img src="./img/logo-small.png" alt="">
+        <button id="returnBtn" class="returnBtn">Voltar</button>
         <button class="backBtn">Sair</button>
     </div>
     <input type="text" id="searchInput" placeholder="Busque por Autor, Editora ou Título">
     <button id="searchBook">Buscar</button>
     <div id="searchResult">
+    <img src="./img/marca.png">
     </div>
     <div id="individualBook">
     </div>
@@ -76,12 +77,16 @@ function pageSearch() {
               const bookRating = item.volumeInfo.categories
               const description = item.volumeInfo.description
               //const isbn = 
+
               fetch("https://6015b2e155dfbd00174ca812.mockapi.io/api/v1/Livrarias", infos)
                 .then((response) => response.json())
                 .then((json) => {
                   const individualBook = document.querySelector("#individualBook")
                   mostrarLIvroIndividual(imageBoock,name,author,publisher,bookRating,description,individualBook)
                   console.log(json)
+                  searchResult.style.display = "none"
+                  const returnBtn = document.querySelector("#returnBtn");
+                  returnBtn.style.display = "block";
                 })
                 .catch((erro) => console.log("Erro:" + erro));
             })
@@ -117,7 +122,8 @@ function formatOutput(title, author, publisher, bookImg, selfLink) {
   </div>`
   return bookCard;
 }
-function mostrarLIvroIndividual (imageBoock,name,author,publisher,bookRating,description, individualBook){
+
+function mostrarLIvroIndividual (imageBoock,name,author,publisher,bookRating,description,individualBook){
   const templateLivroUNico = `
   <h1>${name}</h1>
   <div> 
@@ -131,8 +137,6 @@ function mostrarLIvroIndividual (imageBoock,name,author,publisher,bookRating,des
   <div>
     <p>${description}</p>
   </div> 
-
   `
-
   individualBook.innerHTML = templateLivroUNico
 }
