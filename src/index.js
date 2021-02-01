@@ -68,6 +68,7 @@ function pageSearch() {
           fetch(eachBook.id, infos)
             .then((response) => response.json())
             .then((json) => {
+              moreInfo();
               console.log(json)
 
               fetch("https://6015b2e155dfbd00174ca812.mockapi.io/api/v1/Livrarias", infos)
@@ -76,6 +77,8 @@ function pageSearch() {
                   console.log(json)
                   const returnBtn = document.querySelector("#returnBtn");
                   returnBtn.style.display = "block";
+                  const bookStore = document.querySelector(".bookStore");
+                  // bookStoreResults(json);
                 })
                 .catch((erro) => console.log("Erro:" + erro));
             })
@@ -99,6 +102,24 @@ function displayResults(response) {
   }
 };
 
+// function bookStoreResults(response){
+//   data.forEach((json) => {
+//     const nome = json.nome
+//     const storeTemplate = `
+//         <div class="bookStore">
+//             <h2>${nome}</h2>
+//         </div>
+//         `
+//         ;
+//   })
+  // for (let i = 0; i < response.name.length; i++){
+  //   const stores = 
+  // }
+//  alert('hello there')
+//   const datas = response.nome
+//   console.log(datas); 
+//}
+
 function formatOutput(title, author, publisher, bookImg, selfLink) {
   var bookCard = `
   <div class="eachBook" id="${selfLink}">
@@ -110,4 +131,13 @@ function formatOutput(title, author, publisher, bookImg, selfLink) {
     </div>
   </div>`
   return bookCard;
+}
+
+function moreInfo(){
+  const template = `
+  <div class="individualBook">
+   <h1>Mais informações</h1>
+  </div>
+  
+  `
 }
