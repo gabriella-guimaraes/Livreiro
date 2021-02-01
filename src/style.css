@@ -1,0 +1,37 @@
+* {
+	padding: 0px;
+	margin: 0px;
+	box-sizing: border-box;
+}
+
+.home {
+	text-align: center;
+}
+
+.home__subtitle {
+	font-family: serif;
+	font-size: 25px;
+	color: black;
+	margin-top: 26px;
+	font-weight: bold;
+}
+.initBtn:hover {
+	opacity: 0, 6;
+	cursor: pointer;
+	background-color: blueviolet;
+}
+
+.initBtn {
+	display: flex;
+	text-align: center;
+	margin: auto;
+	justify-content: center;
+	padding: 38px;
+	font-family: sans-serif;
+	font-weight: bold;
+	color: white;
+	font-size: 20px;
+	border-radius: 50px;
+	background-color: rgb(0, 238, 255);
+	margin-top: 91px;
+}
