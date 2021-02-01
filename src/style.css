@@ -40,7 +40,7 @@
 	margin: 45px;
 	margin-top: 50px;
 	text-align: center;
-	background-image: image("marca.png");
+	background-image: url(./img/marca.png);
 }
 
 .header {
