@@ -23,8 +23,10 @@ function pageSearch() {
         <button id="returnBtn" class="returnBtn">Voltar</button>
         <button class="backBtn">Sair</button>
     </div>
-    <input type="text" id="searchInput" placeholder="Busque por Autor, Editora ou Título">
-    <button id="searchBook">Buscar</button>
+    <div class="seachBox">
+      <input type="text" id="searchInput" placeholder="Busque por Autor, Editora ou Título">
+      <button id="searchBook">Buscar</button>
+    </div>
     <div id="searchResult">
     <img src="./img/marca.png">
     </div>
@@ -70,19 +72,17 @@ function pageSearch() {
             .then((response) => response.json())
             .then((json) => {
               console.log(json)
-              const imageBoock = (item.volumeInfo.imageLinks) ? item.volumeInfo.imageLinks.thumbnail : placeHldr
+              const imageBoock = json.volumeInfo.imageLinks.thumbnail;
               const name = json.volumeInfo.title;
-              const author = item.volumeInfo.authors;
-              const publisher = item.volumeInfo.publisher;
-              const bookRating = item.volumeInfo.categories
-              const description = item.volumeInfo.description
+              const author = json.volumeInfo.authors;
+              const publisher = json.volumeInfo.publisher;
+              const bookRating = json.volumeInfo.categories;
+              const description = json.volumeInfo.description
               //const isbn = 
 
               fetch("https://6015b2e155dfbd00174ca812.mockapi.io/api/v1/Livrarias", infos)
                 .then((response) => response.json())
                 .then((json) => {
-                  const individualBook = document.querySelector("#individualBook")
-                  mostrarLIvroIndividual(imageBoock,name,author,publisher,bookRating,description,individualBook)
                   console.log(json)
                   
                   const loja1 = json[0].nome;
@@ -91,17 +91,23 @@ function pageSearch() {
                   const estoque1 = json [0].quantidade;
                   const estoque2 = json [1].quantidade;
                   const estoque3 = json [2].quantidade;
-                  // // console.log(nome)
                   searchResult.style.display = "none"
-
-                  // const individualBook = document.querySelector("#individualBook");
                   
-                  mostrarLIvroIndividual(loja1, loja2, loja3, nome, estoque1, estoque2, estoque3, individualBook)
+                  const individualBook = document.querySelector("#individualBook");
+                  individualBook.style.display = "block"
+                  mostrarLIvroIndividual(loja1, loja2, loja3, estoque1, estoque2, estoque3, imageBoock, name, author, publisher,bookRating, description, individualBook)
+
+                  const seachBox = document.querySelector(".seachBox");
+                  seachBox.style.display = "none"
 
                   const returnBtn = document.querySelector("#returnBtn");
                   returnBtn.style.display = "block";
-                  const bookStore = document.querySelector(".bookStore");
-                  // bookStoreResults(json);
+                  returnBtn.addEventListener("click", () => {
+                    searchResult.style.display = "block"
+                    individualBook.style.display = "none"
+                    returnBtn.style.display = "none"
+                    seachBox.style.display = "block"
+                  })
                 })
                 .catch((erro) => console.log("Erro:" + erro));
             })
@@ -125,24 +131,6 @@ function displayResults(response) {
   }
 };
 
-// function bookStoreResults(response){
-//   data.forEach((json) => {
-//     const nome = json.nome
-//     const storeTemplate = `
-//         <div class="bookStore">
-//             <h2>${nome}</h2>
-//         </div>
-//         `
-//         ;
-//   })
-  // for (let i = 0; i < response.name.length; i++){
-  //   const stores = 
-  // }
-//  alert('hello there')
-//   const datas = response.nome
-//   console.log(datas); 
-//}
-
 function formatOutput(title, author, publisher, bookImg, selfLink) {
   var bookCard = `
   <div class="eachBook" id="${selfLink}">
@@ -156,33 +144,26 @@ function formatOutput(title, author, publisher, bookImg, selfLink) {
   return bookCard;
 }
 
-function mostrarLIvroIndividual (imageBoock,name,author,publisher,bookRating,description, loja1, loja2, loja3, estoque1, estoque2, estoque3,individualBook){
+function mostrarLIvroIndividual (loja1, loja2, loja3, estoque1, estoque2, estoque3, imageBoock,name,author,publisher,bookRating,description,individualBook){
   const templateLivroUNico = `
   <h1>${name}</h1>
   <div> 
-  <img src="${imageBoock}" alt="${name}">
-  <div>
-    <p>${author}</p>
-    <p>${publisher}</p>
-    <p>${bookRating}</p>
+    <img src="${imageBoock}" alt="${name}">
+    <div>
+      <p>${author}</p>
+      <p>${publisher}</p>
+      <p>${bookRating}</p>
+    </div>
   </div>
+  <div>
+    <h1>Quantidade em estoque</h1>
+    <p>${loja1}: ${estoque1} livros</p>
+    <p>${loja2}: ${estoque2} livros</p>
+    <p>${loja3}: ${estoque3} livros</p>
   </div>
   <div>
-    <p>${description}</p>
-  </div> 
-  <h1>${name}</h1>
-  <h2>Livro disponível nas unidades:</h2>
-  <p>${loja1}</p>
-  <p>${loja2}</p>
-  <p>${loja3}</p>
- </div>
- <div>
- <h1>Quantidade em estoque</h1>
- <p>${loja1}: ${estoque1} livros</p>
- <p>${loja2}: ${estoque2} livros</p>
- <p>${loja3}: ${estoque3} livros</p>
-
- </div> 
+     <p>${description}</p>
+  </div>   
   `
   alert('cagou aqui')
   individualBook.innerHTML = templateLivroUNico
