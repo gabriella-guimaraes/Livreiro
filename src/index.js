@@ -19,13 +19,14 @@ function pageSearch() {
 
   const templateSearch = `
     <div class="header">
-        <img src="./img/book.png" alt="">
+        <img src="./img/logo-small.png" alt="">
         <button id="returnBtn" class="returnBtn">Voltar</button>
         <button class="backBtn">Sair</button>
     </div>
     <input type="text" id="searchInput" placeholder="Busque por Autor, Editora ou Título">
     <button id="searchBook">Buscar</button>
     <div id="searchResult">
+    <img src="./img/marca.png">
     </div>
     <div id="individualBook">
     </div>
@@ -70,11 +71,22 @@ function pageSearch() {
             .then((json) => {
               moreInfo();
               console.log(json)
+              const nome = json.volumeInfo.title;
 
               fetch("https://6015b2e155dfbd00174ca812.mockapi.io/api/v1/Livrarias", infos)
                 .then((response) => response.json())
                 .then((json) => {
                   console.log(json)
+                  
+                  const loja1 = json[0].nome;
+                  const loja2 = json[1].nome;
+                  // console.log(nome)
+                  searchResult.style.display = "none"
+
+                  const individualBook = document.querySelector("#individualBook");
+                  
+                  mostrarLIvroIndividual(loja1, loja2, nome, individualBook)
+
                   const returnBtn = document.querySelector("#returnBtn");
                   returnBtn.style.display = "block";
                   const bookStore = document.querySelector(".bookStore");
@@ -133,11 +145,14 @@ function formatOutput(title, author, publisher, bookImg, selfLink) {
   return bookCard;
 }
 
-function moreInfo(){
-  const template = `
-  <div class="individualBook">
-   <h1>Mais informações</h1>
+function mostrarLIvroIndividual (loja1, loja2, nome, individualBook){
+  const templateLivroUNico = `
+  <div>
+    <h1>${nome}</h1>
+    <p>${loja1}</p>
+    <p>${loja2}</p>
   </div>
-  
   `
+
+  individualBook.innerHTML = templateLivroUNico
 }
