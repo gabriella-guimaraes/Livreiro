@@ -4,14 +4,18 @@
 	box-sizing: border-box;
 }
 
+.logo {
+	height: 270px;
+}
+
 .home {
 	text-align: center;
-	margin-top: 50px;
+	margin-top: 137px;
 }
 
 .home__subtitle {
-	font-family: serif;
-	font-size: 25px;
+	font-family: Arial;
+	font-size: 23px;
 	color: black;
 	margin-top: 26px;
 	font-weight: bold;
@@ -26,12 +30,12 @@
 	text-align: center;
 	margin: auto;
 	justify-content: center;
-	padding: 38px;
+	padding: 17px;
 	font-family: Arial;
 	font-weight: bold;
 	color: white;
-	font-size: 20px;
-	border-radius: 50px;
+	font-size: 27px;
+	border-radius: 120px;
 	background-color: rgb(12, 24, 196);
 	margin-top: 50px;
 }
