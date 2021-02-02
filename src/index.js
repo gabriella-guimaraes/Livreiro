@@ -152,32 +152,34 @@ function formatOutput(title, author, publisher, bookImg, selfLink) {
 
 function mostrarEachBook (loja1, loja2, loja3, estoque1, estoque2, estoque3, imageBoock,name,author,publisher,bookRating,description,individualBook){
   const templateEachBook = `
-  <h1 id="bookName">${name}</h1>
-  <div class="moreInfo"> 
-    <img src="${imageBoock}" alt="${name}">
-    <div class="bookInfo">
-      <p><strong>Autor(a):</strong> ${author}</p>
-      <p><strong>Editora:</strong> ${publisher}</p>
-      <p><strong>Gênero:</strong> ${bookRating}</p>
+  <div class="bookTemplate">
+    <h1 id="bookName">${name}</h1>
+    <div class="moreInfo"> 
+      <img src="${imageBoock}" alt="${name}">
+      <div class="bookInfo">
+        <p><strong>Autor(a):</strong> ${author}</p>
+        <p><strong>Editora:</strong> ${publisher}</p>
+        <p><strong>Gênero:</strong> ${bookRating}</p>
+      </div>
     </div>
-  </div>
-  <div class="extraInfo">
-    <div class="storesInfo">
-      <h2>Estoque</h2>
-      <p>${loja1}: ${estoque1} livros</p>
-      <p>${loja2}: ${estoque2} livros</p>
-      <p>${loja3}: ${estoque3} livros</p>
+    <div class="extraInfo">
+      <div class="storesInfo">
+        <h2>Estoque</h2>
+        <p>${loja1}: ${estoque1} livros</p>
+        <p>${loja2}: ${estoque2} livros</p>
+        <p>${loja3}: ${estoque3} livros</p>
+      </div>
+      <div class="bookLocation">
+        <h2>Localização</h2>
+        <p>Corredor: 3</p>
+        <p>Estante: 4</p>
+      </div> 
+    </div>  
+    <div class="bookDescription">
+      <h2 id="description">Sinopse</h2>
+      <p class="bookDescription__text">${description}</p>
     </div>
-    <div class="bookLocation">
-      <h2>Localização</h2>
-      <p>Corredor: 3</p>
-      <p>Estante: 4</p>
-    </div> 
-  </div>  
-  <div class="bookDescription">
-    <h2 id="description">Sinopse</h2>
-    <p class="bookDescription__text">${description}</p>
-  </div>   
+  </div> 
 `
   individualBook.innerHTML = templateEachBook
 }

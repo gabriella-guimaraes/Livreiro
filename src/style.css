@@ -186,11 +186,15 @@ footer a {
 	padding: 10px;
 }
 
+.bookTemplate{
+	width: 550px;
+	margin: 0 auto;
+}
+
 .moreInfo {
 	display: flex;
 	margin: 0 auto;
-	justify-content: space-around;
-	width: 75%;
+	justify-content: space-between;
 	font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -213,9 +217,9 @@ footer a {
 .extraInfo {
 	display: flex;
 	margin: 0 auto;
-	width: 80%;
 	justify-content: space-between;
-	padding: 0 31px;
+	/* padding: 0 31px; */
+	width: 550px;
 	margin-top: 18px;
 	margin-bottom: 18px;
 	font-size: 20px;
@@ -228,18 +232,18 @@ footer a {
 	text-align: left;
 	padding: 10px;
 	font-family: Arial, Helvetica, sans-serif;
+	width: 48%;
 }
 
-.storesInfo {
-	max-width: 50%;
+/* .storesInfo {
+	width: 60%;
 	font-family: Arial, Helvetica, sans-serif;
 }
 
 .bookLocation {
-	max-width: 50%;
-	width: 46%;
+	width: 60%;
 	font-family: Arial, Helvetica, sans-serif;
-}
+} */
 
 .storesInfo h2,
 .bookLocation h2 {
@@ -256,7 +260,7 @@ footer a {
 	background-color: #efefef;
 	text-align: left;
 	font-size: 20px;
-	width: 551px;
+	width: 550px;
 	margin: 0 auto 70px;
 	padding: 10px;
 	font-family: Arial, Helvetica, sans-serif;
