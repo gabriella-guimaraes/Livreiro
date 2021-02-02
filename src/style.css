@@ -67,6 +67,9 @@
 	padding: 8px;
 	margin: 22px;
 	width: 34%;
+	border: 2px #1c1c1c solid;
+	border-radius: 10px;
+	outline: none;
 }
 
 .backBtn {
@@ -142,32 +145,63 @@ footer a {
 }
 
 .eachBook {
+	margin: 0 auto;
+	width: 550px;
 	display: flex;
 	font-family: Arial;
-	font-weight: bold;
-	padding: 40px;
+	padding: 20px;
 	justify-content: space-around;
 }
 
-.book {
-	display: flex;
-	justify-content: flex-start;
+.details__title {
+	margin-bottom: 10px;
+	font-size: 1.8em;
 }
 
-.details {
+.aut__publ {
 	display: flex;
-	justify-content: center;
+	flex-direction: column;
+	align-content: center;
+	text-align: left;
+	padding: 0 40px;
+}
+
+.details__author,
+.details__publisher {
+	font-size: 1.2em;
+	margin-bottom: 10px;
+	font-size: 1.3em;
+}
+
+#book {
+	height: 150px;
+	border: 2px #efefef solid;
+}
+
+#details {
+	background-color: #efefef;
+	width: 350px;
+	height: 150px;
+	overflow: hidden;
+	padding: 10px;
+}
+
+.bookTemplate{
+	width: 550px;
+	margin: 0 auto;
 }
 
 .moreInfo {
 	display: flex;
 	margin: 0 auto;
-	justify-content: space-around;
-	width: 75%;
+	justify-content: space-between;
 	font-family: Arial, Helvetica, sans-serif;
 }
 
 .bookInfo {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 	text-align: left;
 	font-size: 20px;
 	width: 400px;
@@ -176,12 +210,16 @@ footer a {
 	font-family: Arial, Helvetica, sans-serif;
 }
 
+.bookInfo p {
+	margin-bottom: 10px;
+}
+
 .extraInfo {
 	display: flex;
 	margin: 0 auto;
-	width: 80%;
 	justify-content: space-between;
-	padding: 0 31px;
+	/* padding: 0 31px; */
+	width: 550px;
 	margin-top: 18px;
 	margin-bottom: 18px;
 	font-size: 20px;
@@ -194,31 +232,42 @@ footer a {
 	text-align: left;
 	padding: 10px;
 	font-family: Arial, Helvetica, sans-serif;
+	width: 48%;
 }
 
-.storesInfo {
-	max-width: 50%;
+/* .storesInfo {
+	width: 60%;
 	font-family: Arial, Helvetica, sans-serif;
 }
 
 .bookLocation {
-	max-width: 50%;
-	width: 46%;
+	width: 60%;
 	font-family: Arial, Helvetica, sans-serif;
+} */
+
+.storesInfo h2,
+.bookLocation h2 {
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+.storesInfo p,
+.bookLocation p {
+	margin-bottom: 10px;
 }
 
 .bookDescription {
 	background-color: #efefef;
 	text-align: left;
 	font-size: 20px;
-	width: 551px;
+	width: 550px;
 	margin: 0 auto 70px;
 	padding: 10px;
 	font-family: Arial, Helvetica, sans-serif;
 }
 
 #description {
-	margin-bottom: 5px;
+	margin-bottom: 10px;
 	text-align: center;
 	font-family: Arial, Helvetica, sans-serif;
 }
