@@ -57,7 +57,10 @@
 	font-family: Arial;
 	color: black;
 	justify-content: space-around;
-	max-width: 800px;
+}
+
+#marca {
+	max-width: 50%;
 }
 
 #searchInput {
@@ -143,6 +146,7 @@ footer a {
 	font-family: Arial;
 	font-weight: bold;
 	padding: 40px;
+	justify-content: space-around;
 }
 
 .book {
