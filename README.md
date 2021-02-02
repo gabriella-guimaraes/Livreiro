@@ -23,12 +23,14 @@ Fazendo uma pesquisa voltada ao mercado de livros, mapeamos um problema em comum
 
 Sendo assim direcionamos nossa solução para as  livrarias, e desenvolvemos o assistente virtual Livreiro, onde o cliente poderá pesquisar informações de forma direta e a disponibilidade dos produtos  na loja e onde encontra-lo.
 
-### 3. Personas
-![alt text](src/img/student.jpg)
-
-### 4. Pesquisa
+### 3. Pesquisa
 Um breve trecho da pesquisa desenvolvida:
 ![alt text](src/img/pesquisa.jpg)
+
+### 4. Personas
+![alt text](src/img/student.jpg)
+Após a pesquisa com o formulário formulamos uma protopersona e 4 personas de possíveis usuários:
+![alt text](src/img/personas-livreiro.jpg)
 
 ### 5.Funcionalidades
 - Atendimento Personalizado
