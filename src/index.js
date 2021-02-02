@@ -80,6 +80,8 @@ function pageSearch() {
               const publisher = json.volumeInfo.publisher;
               const bookRating = json.volumeInfo.categories;
               const description = json.volumeInfo.description
+              const price = json.saleInfo.listPrice.amount
+              console.log(price)
               //const isbn = 
 
               fetch("https://6015b2e155dfbd00174ca812.mockapi.io/api/v1/Livrarias", infos)
@@ -97,7 +99,7 @@ function pageSearch() {
                   
                   const individualBook = document.querySelector("#individualBook");
                   individualBook.style.display = "block"
-                  mostrarEachBook(loja1, loja2, loja3, estoque1, estoque2, estoque3, imageBoock,name,author,publisher,bookRating,description,individualBook)
+                  mostrarEachBook(price, loja1, loja2, loja3, estoque1, estoque2, estoque3, imageBoock,name,author,publisher,bookRating,description,individualBook)
 
                   const seachBox = document.querySelector(".seachBox");
                   seachBox.style.display = "none"
@@ -150,7 +152,7 @@ function formatOutput(title, author, publisher, bookImg, selfLink) {
   return bookCard;
 }
 
-function mostrarEachBook (loja1, loja2, loja3, estoque1, estoque2, estoque3, imageBoock,name,author,publisher,bookRating,description,individualBook){
+function mostrarEachBook (price, loja1, loja2, loja3, estoque1, estoque2, estoque3, imageBoock,name,author,publisher,bookRating,description,individualBook){
   const templateEachBook = `
   <div class="bookTemplate">
     <h1 id="bookName">${name}</h1>
@@ -160,6 +162,7 @@ function mostrarEachBook (loja1, loja2, loja3, estoque1, estoque2, estoque3, ima
         <p><strong>Autor(a):</strong> ${author}</p>
         <p><strong>Editora:</strong> ${publisher}</p>
         <p><strong>Gênero:</strong> ${bookRating}</p>
+        <p><strong>Valor:</strong> R$${price}</p>
       </div>
     </div>
     <div class="extraInfo">
