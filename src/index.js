@@ -138,9 +138,11 @@ function formatOutput(title, author, publisher, bookImg, selfLink) {
   <div class="eachBook" id="${selfLink}">
     <img id="book" src="${bookImg}" alt="${title}">
     <div id="${selfLink}">
+    <section id="details">
       <h2>${title}</h2>
       <p>Autor: ${author}</p>
       <p>Editora: ${publisher}</p>
+    </section>  
     </div>
   </div>`
   return bookCard;
