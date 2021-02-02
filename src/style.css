@@ -58,6 +58,7 @@
 	font-family: Arial;
 	color: black;
 	justify-content: space-between;
+	max-width: 800px;
 }
 
 #searchInput {
@@ -147,9 +148,81 @@ footer a {
 	justify-content: flex-start;
 }
 
+.moreInfo {
+	display: flex;
+	margin: 0 auto;
+	justify-content: space-around;
+	width: 75%;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.bookInfo {
+	text-align: left;
+	font-size: 20px;
+	width: 400px;
+	background-color: #efefef;
+	padding: 10px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.extraInfo {
+	display: flex;
+	margin: 0 auto;
+	width: 80%;
+	justify-content: space-between;
+	padding: 0 31px;
+    margin-top: 18px;
+	margin-bottom: 18px;
+	font-size: 20px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.storesInfo, 
+.bookLocation {
+	background-color: #efefef;
+	text-align: left;
+	padding: 10px;
+	font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.storesInfo {
+	max-width: 50%;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.bookLocation {
+	max-width: 50%;
+	width: 46%;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.bookDescription {
+	background-color: #efefef;
+	text-align: left;
+	font-size: 20px;
+	width: 551px;
+	margin: 0 auto 70px;
+	padding: 10px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+#description {
+	margin-bottom: 5px;
+	text-align: center;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+#bookName {
+	margin-bottom: 20px;
+	font-size: 45px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
 @media only screen and (min-width: 800px) {
 	.marca {
 		display: flex;
 		justify-content: center;
 	}
 }
+
