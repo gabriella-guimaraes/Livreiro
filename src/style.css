@@ -54,10 +54,9 @@
 }
 .header {
 	display: flex;
-	margin: auto;
 	font-family: Arial;
 	color: black;
-	justify-content: space-between;
+	justify-content: space-around;
 	max-width: 800px;
 }
 
@@ -66,6 +65,7 @@
 	margin: 22px;
 	width: 34%;
 }
+
 .backBtn {
 	font-family: Arial;
 	color: white;
@@ -114,6 +114,8 @@
 
 .header__btn {
 	display: flex;
+	width: 200px;
+	justify-content: space-around;
 }
 
 #searchResult {
