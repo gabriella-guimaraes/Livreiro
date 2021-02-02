@@ -20,8 +20,10 @@ function pageSearch() {
   const templateSearch = `
     <div class="header">
         <img src="./img/logo-small.png" alt="">
+      <div class="header__btn">
         <button id="returnBtn" class="returnBtn">Voltar</button>
         <button class="backBtn">Sair</button>
+      </div>
     </div>
     <div class="seachBox">
       <input type="text" id="searchInput" placeholder="Busque por Autor, Editora ou Título">
@@ -101,11 +103,11 @@ function pageSearch() {
                   seachBox.style.display = "none"
 
                   const returnBtn = document.querySelector("#returnBtn");
-                  returnBtn.style.display = "block";
+                  returnBtn.style.visibility = "visible";
                   returnBtn.addEventListener("click", () => {
                     searchResult.style.display = "block"
                     individualBook.style.display = "none"
-                    returnBtn.style.display = "none"
+                    returnBtn.style.visibility = "hidden";
                     seachBox.style.display = "block"
                   })
                 })
