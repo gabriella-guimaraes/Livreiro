@@ -150,27 +150,29 @@ function formatOutput(title, author, publisher, bookImg, selfLink) {
 
 function mostrarLIvroIndividual (loja1, loja2, loja3, estoque1, estoque2, estoque3, imageBoock,name,author,publisher,bookRating,description,individualBook){
   const templateLivroUNico = `
-  <h1>${name}</h1>
-  <div> 
+  <h1 id="bookName">${name}</h1>
+  <div class="moreInfo"> 
     <img src="${imageBoock}" alt="${name}">
-    <div>
+    <div class="bookInfo">
       <p>Nome do Autor: ${author}</p>
       <p>Nome da Editora: ${publisher}</p>
       <p>Classificação do Livro: ${bookRating}</p>
     </div>
   </div>
-  <div>
-    <h2>Quantidade em estoque</h2>
-    <p>${loja1}: ${estoque1} livros</p>
-    <p>${loja2}: ${estoque2} livros</p>
-    <p>${loja3}: ${estoque3} livros</p>
-  </div>
-  <div>
-    <h2>Localização</h2>
-    <p>Setor: Ficção, Romance</p>
-  </div> 
-  <div>
-    <h3>Sinopse</h3>
+  <div class="extraInfo">
+    <div class="storesInfo">
+      <h2>Quantidade em estoque</h2>
+      <p>${loja1}: ${estoque1} livros</p>
+      <p>${loja2}: ${estoque2} livros</p>
+      <p>${loja3}: ${estoque3} livros</p>
+    </div>
+    <div class="bookLocation">
+      <h2>Localização</h2>
+      <p>Setor: Ficção, Romance</p>
+    </div> 
+  </div>  
+  <div class="bookDescription">
+    <h2 id="description">Sinopse</h2>
     <p>${description}</p>
   </div>   
 `
