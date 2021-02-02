@@ -1,7 +1,7 @@
 # Livreiro
 ![alt text](src/img/toten.jpg)
 
-**Bold***Acesse a aplicação [Aqui](https://livreiro.vercel.app/) 
+<b> *Acesse a aplicação [Aqui](https://livreiro.vercel.app/) 
 ## Índice
 
 - [1. Introdução](#1-introdução)
