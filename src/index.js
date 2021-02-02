@@ -19,7 +19,7 @@ function pageSearch() {
 
   const templateSearch = `
     <div class="header">
-        <img src="./img/logo-small.png" alt="">
+        <img id="small" src="./img/logo-small.png" alt="">
       <div class="header__btn">
         <button id="returnBtn" class="returnBtn">Voltar</button>
         <button class="backBtn">Sair</button>
@@ -30,7 +30,7 @@ function pageSearch() {
       <button id="searchBook">Buscar</button>
     </div>
     <div id="searchResult">
-    <img src="./img/marca.png">
+    <img id="marca" src="./img/marca.png">
     </div>
     <div id="individualBook">
     </div>
@@ -136,7 +136,7 @@ function displayResults(response) {
 function formatOutput(title, author, publisher, bookImg, selfLink) {
   var bookCard = `
   <div class="eachBook" id="${selfLink}">
-    <img src="${bookImg}" alt="${title}">
+    <img id="book" src="${bookImg}" alt="${title}">
     <div id="${selfLink}">
       <h2>${title}</h2>
       <p>Autor: ${author}</p>
