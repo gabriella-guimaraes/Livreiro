@@ -57,7 +57,10 @@
 	font-family: Arial;
 	color: black;
 	justify-content: space-around;
-	max-width: 800px;
+}
+
+#marca {
+	max-width: 50%;
 }
 
 #searchInput {
@@ -143,11 +146,17 @@ footer a {
 	font-family: Arial;
 	font-weight: bold;
 	padding: 40px;
+	justify-content: space-around;
 }
 
 .book {
 	display: flex;
 	justify-content: flex-start;
+}
+
+.details {
+	display: flex;
+	justify-content: center;
 }
 
 .moreInfo {
@@ -173,19 +182,18 @@ footer a {
 	width: 80%;
 	justify-content: space-between;
 	padding: 0 31px;
-    margin-top: 18px;
+	margin-top: 18px;
 	margin-bottom: 18px;
 	font-size: 20px;
 	font-family: Arial, Helvetica, sans-serif;
 }
 
-.storesInfo, 
+.storesInfo,
 .bookLocation {
 	background-color: #efefef;
 	text-align: left;
 	padding: 10px;
 	font-family: Arial, Helvetica, sans-serif;
-
 }
 
 .storesInfo {
@@ -227,4 +235,3 @@ footer a {
 		justify-content: center;
 	}
 }
-
