@@ -47,16 +47,17 @@
 	margin: 0 auto;
 	margin-top: 30px;
 	text-align: center;
-	/* background-image: url(./img/marca.png); */
 }
-
+.marca {
+	display: flex;
+	justify-content: center;
+}
 .header {
 	display: flex;
 	margin: auto;
-	justify-content: space-between;
 	font-family: Arial;
 	color: black;
-	width: 800px;
+	justify-content: space-between;
 }
 
 #searchInput {
@@ -112,8 +113,6 @@
 
 .header__btn {
 	display: flex;
-	width: 13em;
-	justify-content: space-around;
 }
 
 #searchResult {
@@ -123,7 +122,7 @@
 footer {
 	position: fixed;
 	bottom: 0;
-	background-color: #B13D3D;
+	background-color: #b13d3d;
 	text-align: center;
 	width: 100vw;
 	padding: 0.2em;
@@ -134,4 +133,23 @@ footer {
 
 footer a {
 	color: white;
+}
+
+.eachBook {
+	display: flex;
+	font-family: Arial;
+	font-weight: bold;
+	padding: 40px;
+}
+
+.book {
+	display: flex;
+	justify-content: flex-start;
+}
+
+@media only screen and (min-width: 800px) {
+	.marca {
+		display: flex;
+		justify-content: center;
+	}
 }
