@@ -97,7 +97,7 @@ function pageSearch() {
                   
                   const individualBook = document.querySelector("#individualBook");
                   individualBook.style.display = "block"
-                  mostrarLIvroIndividual(loja1, loja2, loja3, estoque1, estoque2, estoque3, imageBoock,name,author,publisher,bookRating,description,individualBook)
+                  mostrarEachBook(loja1, loja2, loja3, estoque1, estoque2, estoque3, imageBoock,name,author,publisher,bookRating,description,individualBook)
 
                   const seachBox = document.querySelector(".seachBox");
                   seachBox.style.display = "none"
@@ -146,8 +146,8 @@ function formatOutput(title, author, publisher, bookImg, selfLink) {
   return bookCard;
 }
 
-function mostrarLIvroIndividual (loja1, loja2, loja3, estoque1, estoque2, estoque3, imageBoock,name,author,publisher,bookRating,description,individualBook){
-  const templateLivroUNico = `
+function mostrarEachBook (loja1, loja2, loja3, estoque1, estoque2, estoque3, imageBoock,name,author,publisher,bookRating,description,individualBook){
+  const templateEachBook = `
   <h1 id="bookName">${name}</h1>
   <div class="moreInfo"> 
     <img src="${imageBoock}" alt="${name}">
@@ -166,7 +166,8 @@ function mostrarLIvroIndividual (loja1, loja2, loja3, estoque1, estoque2, estoqu
     </div>
     <div class="bookLocation">
       <h2>Localização</h2>
-      <p>Setor: Ficção, Romance</p>
+      <p>Corredor: 3</p>
+      <p>Estante: 4</p>
     </div> 
   </div>  
   <div class="bookDescription">
@@ -174,5 +175,5 @@ function mostrarLIvroIndividual (loja1, loja2, loja3, estoque1, estoque2, estoqu
     <p>${description}</p>
   </div>   
 `
-  individualBook.innerHTML = templateLivroUNico
+  individualBook.innerHTML = templateEachBook
 }
