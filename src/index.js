@@ -139,9 +139,11 @@ function formatOutput(title, author, publisher, bookImg, selfLink) {
     <img id="book" src="${bookImg}" alt="${title}">
     <div id="${selfLink}">
     <section id="details">
-      <h2>${title}</h2>
-      <p>Autor: ${author}</p>
-      <p>Editora: ${publisher}</p>
+      <h2 class="details__title">${title}</h2>
+      <div class="aut__publ">
+        <p class="details__author">Autor: ${author}</p>
+        <p class="details__publisher">Editora: ${publisher}</p>
+      </div>
     </section>  
     </div>
   </div>`
@@ -154,14 +156,14 @@ function mostrarEachBook (loja1, loja2, loja3, estoque1, estoque2, estoque3, ima
   <div class="moreInfo"> 
     <img src="${imageBoock}" alt="${name}">
     <div class="bookInfo">
-      <p>Nome do Autor: ${author}</p>
-      <p>Nome da Editora: ${publisher}</p>
-      <p>Classificação do Livro: ${bookRating}</p>
+      <p><strong>Autor(a):</strong> ${author}</p>
+      <p><strong>Editora:</strong> ${publisher}</p>
+      <p><strong>Gênero:</strong> ${bookRating}</p>
     </div>
   </div>
   <div class="extraInfo">
     <div class="storesInfo">
-      <h2>Quantidade em estoque</h2>
+      <h2>Estoque</h2>
       <p>${loja1}: ${estoque1} livros</p>
       <p>${loja2}: ${estoque2} livros</p>
       <p>${loja3}: ${estoque3} livros</p>
@@ -174,7 +176,7 @@ function mostrarEachBook (loja1, loja2, loja3, estoque1, estoque2, estoque3, ima
   </div>  
   <div class="bookDescription">
     <h2 id="description">Sinopse</h2>
-    <p>${description}</p>
+    <p class="bookDescription__text">${description}</p>
   </div>   
 `
   individualBook.innerHTML = templateEachBook
