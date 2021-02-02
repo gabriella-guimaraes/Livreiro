@@ -95,7 +95,7 @@ function pageSearch() {
                   
                   const individualBook = document.querySelector("#individualBook");
                   individualBook.style.display = "block"
-                  mostrarLIvroIndividual(loja1, loja2, loja3, estoque1, estoque2, estoque3, imageBoock, name, author, publisher,bookRating, description, individualBook)
+                  mostrarLIvroIndividual(loja1, loja2, loja3, estoque1, estoque2, estoque3, imageBoock,name,author,publisher,bookRating,description,individualBook)
 
                   const seachBox = document.querySelector(".seachBox");
                   seachBox.style.display = "none"
@@ -150,21 +150,25 @@ function mostrarLIvroIndividual (loja1, loja2, loja3, estoque1, estoque2, estoqu
   <div> 
     <img src="${imageBoock}" alt="${name}">
     <div>
-      <p>${author}</p>
-      <p>${publisher}</p>
-      <p>${bookRating}</p>
+      <p>Nome do Autor: ${author}</p>
+      <p>Nome da Editora: ${publisher}</p>
+      <p>Classificação do Livro: ${bookRating}</p>
     </div>
   </div>
   <div>
-    <h1>Quantidade em estoque</h1>
+    <h2>Quantidade em estoque</h2>
     <p>${loja1}: ${estoque1} livros</p>
     <p>${loja2}: ${estoque2} livros</p>
     <p>${loja3}: ${estoque3} livros</p>
   </div>
   <div>
-     <p>${description}</p>
+    <h2>Localização</h2>
+    <p>Setor: Ficção, Romance</p>
+  </div> 
+  <div>
+    <h3>Sinopse</h3>
+    <p>${description}</p>
   </div>   
-  `
-  alert('cagou aqui')
+`
   individualBook.innerHTML = templateLivroUNico
 }
