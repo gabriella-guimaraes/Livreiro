@@ -21,7 +21,7 @@ O Livreiro foi o produto desenvolvido durante os dois dias de Hackathon.
 
 ## 2. Resumo do projeto
 
-Fazendo uma pesquisa voltada ao mercado de livros, mapeamos um problema em comum no que diz respeito a experiência dos frequantadores de livrarias, que alegam  a falta  de autonomia para encontrar as informações referente ao produto que procura, e também a demora no atendimento presencial.
+Fazendo uma pesquisa voltada ao mercado de livros, mapeamos um problema em comum no que diz respeito a experiência dos frequentadores de livrarias, que alegam  a falta  de autonomia para encontrar as informações referente ao produto que procura, e também a demora no atendimento presencial.
 
 Sendo assim direcionamos nossa solução para as  livrarias, e desenvolvemos o assistente virtual Livreiro, onde o cliente poderá pesquisar informações de forma direta e a disponibilidade dos produtos  na loja e onde encontra-lo.
 
